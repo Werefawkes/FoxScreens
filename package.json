@@ -1,0 +1,15 @@
+{
+  "name": "com.foxthorne.uimanager",
+  "version": "0.0.1",
+  "displayName": "UI Manager",
+  "description": "Streamlines management of the UI.",
+  "unity": "2021.3",
+ "keywords": [
+    "ui",
+    "hud"
+  ],
+  "author": {
+    "name": "Jackson Thorne",
+    "email": "jack@wrightus.com"
+  }
+}
