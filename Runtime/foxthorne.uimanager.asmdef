@@ -1,0 +1,16 @@
+{
+    "name": "Foxthorne.UIManager",
+    "rootNamespace": "Foxthorne",
+    "references": [
+        "GUID:9ca63c4cfd882d344b985ba07c3e9c47"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
