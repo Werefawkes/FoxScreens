@@ -4,12 +4,15 @@
   "displayName": "UI Manager",
   "description": "Streamlines management of the UI.",
   "unity": "2021.3",
- "keywords": [
+  "keywords": [
     "ui",
     "hud"
   ],
   "author": {
     "name": "Jackson Thorne",
     "email": "jack@wrightus.com"
+  },
+  "dependencies": {
+    "com.foxthorne.utilities": "0.0.1"
   }
 }
