@@ -1,7 +1,7 @@
 {
-  "name": "com.foxthorne.uimanager",
+  "name": "com.foxthorne.foxscreens",
   "version": "0.0.1",
-  "displayName": "UI Manager",
+  "displayName": "Fox Screens",
   "description": "Streamlines management of the UI.",
   "unity": "2021.3",
   "keywords": [
@@ -9,7 +9,7 @@
     "hud"
   ],
   "author": {
-    "name": "Jackson Thorne",
+    "name": "Foxthorne",
     "email": "jack@wrightus.com"
   },
   "dependencies": {

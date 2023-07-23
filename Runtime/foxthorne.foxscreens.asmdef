@@ -1,5 +1,5 @@
 {
-    "name": "Foxthorne.UIManager",
+    "name": "Foxthorne.FoxScreens",
     "rootNamespace": "Foxthorne",
     "references": [
         "GUID:9ca63c4cfd882d344b985ba07c3e9c47"

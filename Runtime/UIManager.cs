@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[AddComponentMenu("Foxthorne/FoxScreens/UI Manager")]
 public class UIManager : Foxthorne.Singleton<UIManager>
 {
 	// Start is called before the first frame update
