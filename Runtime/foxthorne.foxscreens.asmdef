@@ -1,6 +1,6 @@
 {
     "name": "Foxthorne.FoxScreens",
-    "rootNamespace": "Foxthorne",
+    "rootNamespace": "Foxthorne.FoxScreens",
     "references": [
         "GUID:9ca63c4cfd882d344b985ba07c3e9c47"
     ],

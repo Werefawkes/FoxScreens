@@ -1,6 +1,6 @@
 {
     "name": "foxthorne.foxscreens.Editor",
-    "rootNamespace": "",
+    "rootNamespace": "Foxthorne.FoxScreens",
     "references": [
         "GUID:f7daa2c50d51c874daf7c02a13bd3b76"
     ],
