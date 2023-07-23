@@ -2,18 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[AddComponentMenu("Foxthorne/FoxScreens/UI Manager")]
-public class UIManager : Foxthorne.Singleton<UIManager>
+namespace Foxthorne.FoxScreens
 {
-	// Start is called before the first frame update
-	void Start()
+	[AddComponentMenu("Foxthorne/FoxScreens/UI Manager")]
+	public class UIManager : Singleton<UIManager>
 	{
-		
-	}
+		public bool IsUIClear { get; private set; }
 
-	// Update is called once per frame
-	void Update()
-	{
-		
+		public void OpenScreen()
+		{
+
+		}
+
+		public void CloseScreen()
+		{
+
+		}
+
+		public void CloseAllScreens()
+		{
+
+		}
 	}
 }

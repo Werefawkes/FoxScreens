@@ -1,0 +1,16 @@
+{
+    "name": "foxthorne.foxscreens.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:f7daa2c50d51c874daf7c02a13bd3b76"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
