@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <ui:Button text="Set Up" display-tooltip-when-elided="true" name="setUpButton" />
+    <uie:Toolbar>
+        <uie:ToolbarButton text="New Screen" display-tooltip-when-elided="true" enable-rich-text="true" name="newScreenButton" />
+    </uie:Toolbar>
+</ui:UXML>

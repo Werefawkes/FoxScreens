@@ -2,7 +2,8 @@
     "name": "foxthorne.foxscreens.Editor",
     "rootNamespace": "Foxthorne.FoxScreens",
     "references": [
-        "GUID:f7daa2c50d51c874daf7c02a13bd3b76"
+        "GUID:f7daa2c50d51c874daf7c02a13bd3b76",
+        "GUID:9ca63c4cfd882d344b985ba07c3e9c47"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

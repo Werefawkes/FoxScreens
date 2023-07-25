@@ -6,16 +6,17 @@ namespace Foxthorne.FoxScreens
 {
     public class Screen : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
-        {
-        
-        }
+        public string screenName;
+        public int screenID;
 
-        // Update is called once per frame
-        void Update()
-        {
-        
-        }
+        public void Open()
+		{
+
+		}
+
+        public void Close()
+		{
+
+		}
     }
 }

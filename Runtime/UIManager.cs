@@ -1,3 +1,4 @@
+using Foxthorne.Utilities;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,8 @@ namespace Foxthorne.FoxScreens
 	public class UIManager : Singleton<UIManager>
 	{
 		public bool IsUIClear { get; private set; }
+
+		public List<Screen> screens;
 
 		public void OpenScreen()
 		{
@@ -22,6 +25,17 @@ namespace Foxthorne.FoxScreens
 		public void CloseAllScreens()
 		{
 
+		}
+
+		public void NewScreen()
+		{
+			Debug.Log("NewScreen()");
+		}
+
+		public void SetUp()
+		{
+			Canvas canvas = new GameObject().AddComponent<Canvas>();
+			transform.parent = canvas.transform;
 		}
 	}
 }
