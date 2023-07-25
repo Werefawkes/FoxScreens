@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 
 namespace Foxthorne.FoxScreens
 {
-	[CustomEditor(typeof(UIManager))]
+	//[CustomEditor(typeof(UIManager))]
 	public class UIManagerEditor : Editor
 	{
 		public VisualTreeAsset inspectorXML;
