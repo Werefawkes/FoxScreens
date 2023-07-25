@@ -4,7 +4,8 @@ using UnityEngine;
 
 namespace Foxthorne.FoxScreens
 {
-	public class Navigator : MonoBehaviour
+	[AddComponentMenu("Foxthorne/FoxScreens/UI Navigator")]
+	public class UINavigator : MonoBehaviour
 	{
 		public List<Screen> breadcrumbs;
 
