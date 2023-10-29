@@ -21,11 +21,13 @@ namespace Foxthorne.FoxScreens
 
 		private void OnValidate()
 		{
-			Debug.Log("Validating");
 			screens = new();
-			foreach (Screen s in GetComponentsInChildren<Screen>(true))
+			Screen[] newScreens = GetComponentsInChildren<Screen>(true);
+			for (int i = 0; i < newScreens.Length; i++)
 			{
-				screens.Add(s);
+				screens.Add(newScreens[i]);
+				newScreens[i].screenID = i;
+				newScreens[i].NameObject();
 			}
 		}
 
@@ -42,6 +44,16 @@ namespace Foxthorne.FoxScreens
 			ScreenUpdate();
 		}
 
+		public void OpenScreen(string screenName, bool exclusive = true)
+		{
+			OpenScreen(GetScreenByName(screenName), exclusive);
+		}
+
+		public void OpenScreen(int screenId, bool exclusive = true)
+		{
+			OpenScreen(GetScreenByID(screenId), exclusive);
+		}
+
 		public void CloseScreen(Screen screen)
 		{
 			openScreens.Remove(screen);
@@ -55,6 +67,7 @@ namespace Foxthorne.FoxScreens
 
 			ScreenUpdate();
 		}
+
 		public void ScreenUpdate()
 		{
 			bool uiclear = true;
@@ -75,6 +88,32 @@ namespace Foxthorne.FoxScreens
 			}
 
 			IsUIClear = uiclear;
+		}
+
+		public Screen GetScreenByName(string name)
+		{
+			foreach (Screen s in screens)
+			{
+				if (s.screenName == name)
+				{
+					return s;
+				}
+			}
+
+			return null;
+		}
+
+		public Screen GetScreenByID(int id)
+		{
+			foreach (Screen s in screens)
+			{
+				if (s.screenID == id)
+				{
+					return s;
+				}
+			}
+
+			return null;
 		}
 		#endregion
 
