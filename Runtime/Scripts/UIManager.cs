@@ -13,6 +13,7 @@ namespace Foxthorne.FoxScreens
 		public List<Screen> screens;
 		public List<Screen> openScreens;
 
+
 		private void Start()
 		{
 			openScreens = new List<Screen>();
@@ -114,6 +115,44 @@ namespace Foxthorne.FoxScreens
 			}
 
 			return null;
+		}
+		#endregion
+
+		#region Indicator Management
+		Dictionary<string, float> exposedFloats = new();
+
+		public void SetExposedFloat(string key, float value)
+		{
+			// If it exists, update it
+			if (exposedFloats.ContainsKey(key))
+			{
+				exposedFloats[key] = value;
+			}
+			else
+			{
+				exposedFloats.Add(key, value);
+			}
+		}
+
+		public float GetExposedFloat(string key)
+		{
+			if (exposedFloats.ContainsKey(key))
+			{
+				return exposedFloats[key];
+			}
+			else
+			{
+				Debug.LogWarning($"Tried to get exposed float '{key}' but it did not exist", this);
+				return float.NaN;
+			}
+		}
+
+		public void DeleteExposedFloat(string key)
+		{
+			if (exposedFloats.ContainsKey(key))
+			{
+				exposedFloats.Remove(key);
+			}
 		}
 		#endregion
 

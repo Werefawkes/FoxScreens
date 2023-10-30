@@ -8,8 +8,9 @@ namespace Foxthorne.FoxScreens
 	public class BarIndicator : MonoBehaviour
 	{
 		[Header("Settings")]
-		public string elementName;
+		public string exposedFloatKey;
 		public bool autoNameObject = true;
+		public float defaultValue = 1;
 
 		[Header("References")]
 		public Image fillImage;
@@ -17,6 +18,21 @@ namespace Foxthorne.FoxScreens
 		private void OnValidate()
 		{
 			if (autoNameObject) NameObject();
+		}
+
+		private void Update()
+		{
+			float val = UIManager.Instance.GetExposedFloat(exposedFloatKey);
+			if (float.IsNaN(val))
+			{
+				val = defaultValue;
+			}
+			SetFillPercent(val);
+		}
+
+		private void Start()
+		{
+			SetFillPercent(defaultValue);
 		}
 
 		public void SetFillPercent(float percent)
@@ -31,7 +47,7 @@ namespace Foxthorne.FoxScreens
 
 		public void NameObject()
 		{
-			name = $"[Bar] {elementName}";
+			name = $"[Bar] {exposedFloatKey}";
 		}
 
 	}
