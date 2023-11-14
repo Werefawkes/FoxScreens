@@ -8,10 +8,12 @@ namespace Foxthorne.FoxScreens
 	[AddComponentMenu("Foxthorne/FoxScreens/UI Manager")]
 	public class UIManager : Singleton<UIManager>
 	{
-		public bool IsUIClear { get; private set; }
+		public static bool IsUIClear { get; private set; }
 
 		public List<Screen> screens;
 		public List<Screen> openScreens;
+
+		public List<Screen> breadcrumbs;
 
 
 		private void Start()
@@ -41,23 +43,25 @@ namespace Foxthorne.FoxScreens
 			}
 
 			openScreens.Add(screen);
+			breadcrumbs.Add(screen);
 
 			ScreenUpdate();
 		}
 
 		public void OpenScreen(string screenName, bool exclusive = true)
 		{
-			OpenScreen(GetScreenByName(screenName), exclusive);
+			OpenScreen(GetScreen(screenName), exclusive);
 		}
 
 		public void OpenScreen(int screenId, bool exclusive = true)
 		{
-			OpenScreen(GetScreenByID(screenId), exclusive);
+			OpenScreen(GetScreen(screenId), exclusive);
 		}
 
 		public void CloseScreen(Screen screen)
 		{
 			openScreens.Remove(screen);
+			breadcrumbs.Remove(screen);
 
 			ScreenUpdate();
 		}
@@ -65,6 +69,7 @@ namespace Foxthorne.FoxScreens
 		public void CloseAllScreens()
 		{
 			openScreens.Clear();
+			breadcrumbs.Clear();
 
 			ScreenUpdate();
 		}
@@ -91,7 +96,7 @@ namespace Foxthorne.FoxScreens
 			IsUIClear = uiclear;
 		}
 
-		public Screen GetScreenByName(string name)
+		public Screen GetScreen(string name)
 		{
 			foreach (Screen s in screens)
 			{
@@ -104,7 +109,7 @@ namespace Foxthorne.FoxScreens
 			return null;
 		}
 
-		public Screen GetScreenByID(int id)
+		public Screen GetScreen(int id)
 		{
 			foreach (Screen s in screens)
 			{

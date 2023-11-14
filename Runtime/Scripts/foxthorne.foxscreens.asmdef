@@ -2,7 +2,8 @@
     "name": "Foxthorne.FoxScreens",
     "rootNamespace": "Foxthorne.FoxScreens",
     "references": [
-        "GUID:9ca63c4cfd882d344b985ba07c3e9c47"
+        "GUID:9ca63c4cfd882d344b985ba07c3e9c47",
+        "GUID:75469ad4d38634e559750d17036d5f7c"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
