@@ -12,6 +12,7 @@ namespace Foxthorne.FoxScreens
 		public int screenID;
 		public bool isHudElement = false;
 		public bool autoNameObject = true;
+		public bool openByDefault = false;
 
 		readonly string hudPrefix = "HUD";
 		readonly string screenPrefix = "GUI";
@@ -30,14 +31,14 @@ namespace Foxthorne.FoxScreens
 		{
 			IsOpen = true;
 
-			// code to enable the screen gameobjects
+			gameObject.SetActive(true);
 		}
 
 		public void Close()
 		{
 			IsOpen = false;
 
-			// code to disable the screen gameobjects
+			gameObject.SetActive(false);
 		}
 
 		public void NameObject()

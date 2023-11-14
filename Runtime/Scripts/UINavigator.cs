@@ -43,11 +43,6 @@ namespace Foxthorne.FoxScreens
 			Debug.Log("OnCancel");
 		}
 
-		void OnMove()
-		{
-			Debug.Log("UIOnMove");
-		}
-
 		void OnPause()
 		{
 			if (UIManager.IsUIClear)

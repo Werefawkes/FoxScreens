@@ -10,7 +10,7 @@ namespace Foxthorne.FoxScreens
 	{
 		public static bool IsUIClear { get; private set; }
 
-		public List<Screen> screens;
+		public List<Screen> allScreens;
 		public List<Screen> openScreens;
 
 		public List<Screen> breadcrumbs;
@@ -19,18 +19,31 @@ namespace Foxthorne.FoxScreens
 		private void Start()
 		{
 			openScreens = new List<Screen>();
+			foreach (Screen s in allScreens)
+			{
+				if (s.openByDefault)
+				{
+					openScreens.Add(s);
+				}
+			}
+
 			ScreenUpdate();
 		}
 
 		private void OnValidate()
 		{
-			screens = new();
+			allScreens = new();
 			Screen[] newScreens = GetComponentsInChildren<Screen>(true);
 			for (int i = 0; i < newScreens.Length; i++)
 			{
-				screens.Add(newScreens[i]);
+				allScreens.Add(newScreens[i]);
 				newScreens[i].screenID = i;
 				newScreens[i].NameObject();
+			}
+
+			if (allScreens.Count == 0)
+			{
+				Debug.LogWarning("No screens found. Make sure this component is attached to the highest parent of the Canvas.");
 			}
 		}
 
@@ -50,12 +63,28 @@ namespace Foxthorne.FoxScreens
 
 		public void OpenScreen(string screenName, bool exclusive = true)
 		{
-			OpenScreen(GetScreen(screenName), exclusive);
+			Screen s = GetScreen(screenName);
+			if (s == null)
+			{
+				Debug.LogWarning("No screen of name " + screenName);
+			}
+			else
+			{
+				OpenScreen(s, exclusive);
+			}
 		}
 
 		public void OpenScreen(int screenId, bool exclusive = true)
 		{
-			OpenScreen(GetScreen(screenId), exclusive);
+			Screen s = GetScreen(screenId);
+			if (s == null)
+			{
+				Debug.LogWarning("No screen of ID " + screenId);
+			}
+			else
+			{
+				OpenScreen(s, exclusive);
+			}
 		}
 
 		public void CloseScreen(Screen screen)
@@ -77,7 +106,7 @@ namespace Foxthorne.FoxScreens
 		public void ScreenUpdate()
 		{
 			bool uiclear = true;
-			foreach (Screen s in screens)
+			foreach (Screen s in allScreens)
 			{
 				if (openScreens.Contains(s))
 				{
@@ -94,11 +123,21 @@ namespace Foxthorne.FoxScreens
 			}
 
 			IsUIClear = uiclear;
+			if (IsUIClear)
+			{
+				Cursor.lockState = CursorLockMode.Locked;
+				Cursor.visible = false;
+			}
+			else
+			{
+				Cursor.lockState = CursorLockMode.None;
+				Cursor.visible = true;
+			}
 		}
 
 		public Screen GetScreen(string name)
 		{
-			foreach (Screen s in screens)
+			foreach (Screen s in allScreens)
 			{
 				if (s.screenName == name)
 				{
@@ -111,7 +150,7 @@ namespace Foxthorne.FoxScreens
 
 		public Screen GetScreen(int id)
 		{
-			foreach (Screen s in screens)
+			foreach (Screen s in allScreens)
 			{
 				if (s.screenID == id)
 				{
