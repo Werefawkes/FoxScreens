@@ -8,8 +8,12 @@ namespace Foxthorne.FoxScreens
 	[AddComponentMenu("Foxthorne/FoxScreens/UI Manager")]
 	public class UIManager : Singleton<UIManager>
 	{
+		[Header("Settings")]
+		public bool LockCursor = true;
+
 		public static bool IsUIClear { get; private set; }
 
+		[Header("Screens")]
 		public List<Screen> allScreens;
 		public List<Screen> openScreens;
 
@@ -123,7 +127,7 @@ namespace Foxthorne.FoxScreens
 			}
 
 			IsUIClear = uiclear;
-			if (IsUIClear)
+			if (IsUIClear && LockCursor)
 			{
 				Cursor.lockState = CursorLockMode.Locked;
 				Cursor.visible = false;
