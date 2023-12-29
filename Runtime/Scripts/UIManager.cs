@@ -2,6 +2,7 @@ using Foxthorne.Utilities;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Foxthorne.FoxScreens
 {
@@ -201,6 +202,18 @@ namespace Foxthorne.FoxScreens
 			{
 				exposedFloats.Remove(key);
 			}
+		}
+		#endregion
+
+		#region Scene Management
+		public void LoadScene(string sceneName)
+		{
+			SceneManager.LoadScene(sceneName);
+		}
+
+		public void ExitGame()
+		{
+			Application.Quit();
 		}
 		#endregion
 
