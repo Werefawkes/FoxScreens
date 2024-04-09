@@ -1,4 +1,4 @@
-using Foxthorne.Utilities;
+using Foxthorne.FoxCore;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

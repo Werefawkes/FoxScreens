@@ -1,4 +1,4 @@
-using Foxthorne.Utilities;
+using Foxthorne.FoxCore;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -168,7 +168,7 @@ namespace Foxthorne.FoxScreens
 		#endregion
 
 		#region Indicator Management
-		Dictionary<string, float> exposedFloats = new();
+		readonly Dictionary<string, float> exposedFloats = new();
 
 		public void SetExposedFloat(string key, float value)
 		{
